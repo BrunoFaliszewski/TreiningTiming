@@ -1,0 +1,122 @@
+WindowManager:
+    MainWindow:
+    TrainingWindow:
+    
+
+<MainWindow>
+    name: "main"
+
+    sets: sets
+    workMinutes: workMinutes
+    workSeconds: workSeconds
+    restMinutes: restMinutes
+    restSeconds: restSeconds
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: "Sets"
+            font_size: 40
+
+        TextInput:
+            id: sets
+            multiline: False
+            text: "0"
+
+        Label:
+            text: "Work"
+            font_size: 40
+
+        GridLayout:
+            cols: 3
+
+            Label:
+                text: "Minutes"
+            
+            Label:
+                text: ""
+            
+            Label:
+                text: "Seconds"
+
+            TextInput:
+                id: workMinutes
+                multiline: False
+                text: "0"
+            
+            Label:
+                text: ":"
+            
+            TextInput:
+                id: workSeconds
+                multiline: False
+                text: "0"
+
+        Label:
+            text: "Rest"
+            font_size: 40
+
+        GridLayout:
+            cols: 3            
+            
+            Label:
+                text: "Minutes"
+            
+            Label:
+                text: ""
+            
+            Label:
+                text: "Seconds"
+
+            TextInput:
+                id: restMinutes
+                multiline: False
+                text: "0"
+            
+            Label:
+                text: ":"
+            
+            TextInput:
+                id: restSeconds
+                multiline: False
+                text: "0"
+
+        GridLayout:
+            cols: 1
+            
+            Button:
+                id: AddButton
+                text: "Add"
+                on_press: root.AddPressed()
+
+            Button:
+                id: ResetButton
+                text: "Reset"
+                on_press: root.ResetPressed()
+            
+            Button:
+                id: StartButton
+                text: "Start"
+                on_press: 
+                    app.root.current = "training"
+                    
+
+<TrainingWindow>
+    name: "training"
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            text: root.seconds
+            font_size: 200
+
+        Label:
+            text: "Seconds"
+        
+        Button:
+            text: "Back"
+            on_press:
+                app.root.current = "main"
+                app.restart()
