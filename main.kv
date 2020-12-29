@@ -15,20 +15,13 @@ WindowManager:
     restSeconds: restSeconds
 
     FloatLayout:
-        canvas.before:
-            Color:
-                rgba: C('#21ac2f')
-            Rectangle:
-                pos: self.pos
-                size: self.size
-
         ScrollView:
             size_hint: (1, 0.28)
             Label:
                 text: root.timesLabel
                 halign: "center"
                 font_size: 20
-                font_name: 'Roboto-Medium.ttf'
+                font_name: 'Fonts\Roboto-Medium.ttf'
                 text_size: (self.width, None)
                 pos_hint: {"x": 0, "top": 0.3}
                 size_hint_y: None
@@ -37,7 +30,7 @@ WindowManager:
         Label:
             text: "Sets"
             font_size: 40
-            font_name: 'Roboto-Medium.ttf'
+            font_name: 'Fonts\Roboto-Medium.ttf'
             size_hint: (1, 0.07)
             pos_hint: {"x": 0, "y": 0.93}
 
@@ -47,18 +40,18 @@ WindowManager:
             text: "0"
             text_size: self.size
             font_size: 30
-            font_name: 'Roboto-Medium.ttf'
+            font_name: 'Fonts\Roboto-Medium.ttf'
             foreground_color: C('#ffffff')
             halign: "center"
-            background_normal: 'TextInputBackgroundNormal.png'
-            background_active: 'TextInputBackgroundActive.png'
+            background_normal: 'TextInputBackground\TextInputBackgroundNormal.png'
+            background_active: 'TextInputBackground\TextInputBackgroundActive.png'
             size_hint: (0.20, 0.07)
             pos_hint: {"x": 0.40, "y": 0.86}
 
         Label:
             text: "Work"
             font_size: 40
-            font_name: 'Roboto-Medium.ttf'
+            font_name: 'Fonts\Roboto-Medium.ttf'
             size_hint: (1, 0.07)
             pos_hint: {"x": 0, "y": 0.79}
 
@@ -68,17 +61,17 @@ WindowManager:
             text: "0"
             text_size: self.size
             font_size: 30
-            font_name: 'Roboto-Medium.ttf'
+            font_name: 'Fonts\Roboto-Medium.ttf'
             foreground_color: C('#ffffff')
             halign: "center"
-            background_normal: 'TextInputBackgroundNormal.png'
-            background_active: 'TextInputBackgroundActive.png'
+            background_normal: 'TextInputBackground\TextInputBackgroundNormal.png'
+            background_active: 'TextInputBackground\TextInputBackgroundActive.png'
             size_hint: (0.20, 0.07)
             pos_hint: {"x": 0.28, "y": 0.72}
         
         Label:
             text: ":"
-            font_name: 'Roboto-Medium.ttf'
+            font_name: 'Fonts\Roboto-Medium.ttf'
             size_hint: (0.04, 0.07)
             pos_hint: {"x": 0.48, "y": 0.72}
         
@@ -88,18 +81,18 @@ WindowManager:
             text: "0"
             text_size: self.size
             font_size: 30
-            font_name: 'Roboto-Medium.ttf'
+            font_name: 'Fonts\Roboto-Medium.ttf'
             foreground_color: C('#ffffff')
             halign: "center"
-            background_normal: 'TextInputBackgroundNormal.png'
-            background_active: 'TextInputBackgroundActive.png'
+            background_normal: 'TextInputBackground\TextInputBackgroundNormal.png'
+            background_active: 'TextInputBackground\TextInputBackgroundActive.png'
             size_hint: (0.20, 0.07)
             pos_hint: {"x": 0.52, "y": 0.72}
 
         Label:
             text: "Rest"
             font_size: 40
-            font_name: 'Roboto-Medium.ttf'
+            font_name: 'Fonts\Roboto-Medium.ttf'
             size_hint: (1, 0.07)
             pos_hint: {"x": 0, "y": 0.65}    
             
@@ -109,17 +102,17 @@ WindowManager:
             text: "0"
             text_size: self.size
             font_size: 30
-            font_name: 'Roboto-Medium.ttf'
+            font_name: 'Fonts\Roboto-Medium.ttf'
             foreground_color: C('#ffffff')
             halign: "center"
-            background_normal: 'TextInputBackgroundNormal.png'
-            background_active: 'TextInputBackgroundActive.png'
+            background_normal: 'TextInputBackground\TextInputBackgroundNormal.png'
+            background_active: 'TextInputBackground\TextInputBackgroundActive.png'
             size_hint: (0.20, 0.07)
             pos_hint: {"x": 0.28, "y": 0.58}
         
         Label:
             text: ":"
-            font_name: 'Roboto-Medium.ttf'
+            font_name: 'Fonts\Roboto-Medium.ttf'
             size_hint: (0.04, 0.07)
             pos_hint: {"x": 0.48, "y": 0.58}
         
@@ -129,21 +122,21 @@ WindowManager:
             text: "0"
             text_size: self.size
             font_size: 30
-            font_name: 'Roboto-Medium.ttf'
+            font_name: 'Fonts\Roboto-Medium.ttf'
             foreground_color: C('#ffffff')
             halign: "center"
-            background_normal: 'TextInputBackgroundNormal.png'
-            background_active: 'TextInputBackgroundActive.png'
+            background_normal: 'TextInputBackground\TextInputBackgroundNormal.png'
+            background_active: 'TextInputBackground\TextInputBackgroundActive.png'
             size_hint: (0.20, 0.07)
             pos_hint: {"x": 0.52, "y": 0.58}
             
         Button:
             id: AddButton
             text: "Add"
-            font_name: 'Roboto-Medium.ttf'
+            font_name: 'Fonts\Roboto-Medium.ttf'
             font_size: 20
-            background_normal: 'ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackgroundDown.png'
+            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
             on_press: root.AddPressed()
             size_hint: (0.49, 0.13)
             pos_hint: {"x": 0.505, "y": 0.425}
@@ -151,10 +144,10 @@ WindowManager:
         Button:
             id: ResetButton
             text: "Reset"
-            font_name: 'Roboto-Medium.ttf'
+            font_name: 'Fonts\Roboto-Medium.ttf'
             font_size: 20
-            background_normal: 'ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackgroundDown.png'
+            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
             on_press: root.ResetPressed()
             size_hint: (0.49, 0.13)
             pos_hint: {"x": 0.005, "y": 0.425}
@@ -162,12 +155,13 @@ WindowManager:
         Button:
             id: StartButton
             text: "Start"
-            font_name: 'Roboto-Medium.ttf'
+            font_name: 'Fonts\Roboto-Medium.ttf'
             font_size: 20
-            background_normal: 'ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackgroundDown.png'
+            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
             on_press: 
                 app.root.current = "training"
+                root.manager.transition.direction = "left"
             size_hint: (0.99, 0.13)
             pos_hint: {"x": 0.005, "y": 0.29}    
 
@@ -175,40 +169,35 @@ WindowManager:
     name: "training"
 
     FloatLayout:
-        canvas.before:
-            Color:
-                rgba: C(root.color)
-            Rectangle:
-                pos: self.pos
-                size: self.size
-
         Label:
             text: root.names
             font_size: 40
-            font_name: 'Roboto-Medium.ttf'
+            font_name: 'Fonts\Roboto-Medium.ttf'
             size_hint: (1, 0.2)
             pos_hint: {"x": 0, "y": 0.8}
 
         Label:
             text: root.seconds
-            font_size: 200
-            font_name: 'Roboto-Medium.ttf'
+            font_size: 170
+            font_name: 'Fonts\Roboto-Medium.ttf'
             size_hint: (1, 0.4)
             pos_hint: {"x": 0, "y": 0.4}
 
         Label:
             text: "Seconds"
-            font_name: 'Roboto-Medium.ttf'
+            font_name: 'Fonts\Roboto-Medium.ttf'
             size_hint: (1, 0.1)
             pos_hint: {"x": 0, "y": 0.3}
         
         Button:
             text: "Back"
             font_size: 20
-            font_name: 'Roboto-Medium.ttf'
-            background_normal: 'ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackgroundDown.png'
+            font_name: 'Fonts\Roboto-Medium.ttf'
+            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
             on_press:
                 app.root.current = "main"
+                root.manager.transition.direction = "right"
+                root.BackPressed()
             size_hint: (0.99, 0.09)
             pos_hint: {"x": 0.005, "y": 0.005}
