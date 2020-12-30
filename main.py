@@ -41,6 +41,9 @@ class MainWindow(Screen):
         Times = [5, 4, 3, 2, 1]
         self.timesLabel = ""
 
+    def SavePressed(self):
+        pass
+
 class TrainingWindow(Screen):
     seconds = StringProperty()
     names = StringProperty()
@@ -92,6 +95,9 @@ class TrainingWindow(Screen):
     
     def BackPressed(self):
         Clock.unschedule(self.schedule)
+
+class MySetsWindow(Screen):
+    pass
 
 class WindowManager(ScreenManager):
     pass

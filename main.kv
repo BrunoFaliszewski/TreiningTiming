@@ -3,6 +3,7 @@
 WindowManager:
     MainWindow:
     TrainingWindow:
+    MySetsWindow:
     
 
 <MainWindow>
@@ -15,120 +16,108 @@ WindowManager:
     restSeconds: restSeconds
 
     FloatLayout:
-        ScrollView:
-            size_hint: (1, 0.28)
-            Label:
-                text: root.timesLabel
-                halign: "center"
-                font_size: 20
-                font_name: 'Fonts\Roboto-Medium.ttf'
-                text_size: (self.width, None)
-                pos_hint: {"x": 0, "top": 0.3}
-                size_hint_y: None
-                height: self.texture_size[1]
-            
         Label:
             text: "Sets"
-            font_size: 40
+            font_size: 30
             font_name: 'Fonts\Roboto-Medium.ttf'
-            size_hint: (1, 0.07)
-            pos_hint: {"x": 0, "y": 0.93}
+            size_hint: (1, 0.06)
+            pos_hint: {"x": 0, "y": 0.94}
 
         TextInput:
             id: sets
             multiline: False
             text: "0"
             text_size: self.size
-            font_size: 30
+            font_size: 22
             font_name: 'Fonts\Roboto-Medium.ttf'
             foreground_color: C('#ffffff')
             halign: "center"
             background_normal: 'TextInputBackground\TextInputBackgroundNormal.png'
             background_active: 'TextInputBackground\TextInputBackgroundActive.png'
-            size_hint: (0.20, 0.07)
-            pos_hint: {"x": 0.40, "y": 0.86}
+            size_hint: (0.20, 0.06)
+            pos_hint: {"x": 0.40, "y": 0.88}
 
         Label:
             text: "Work"
-            font_size: 40
+            font_size: 30
             font_name: 'Fonts\Roboto-Medium.ttf'
-            size_hint: (1, 0.07)
-            pos_hint: {"x": 0, "y": 0.79}
+            size_hint: (1, 0.06)
+            pos_hint: {"x": 0, "y": 0.82}
 
         TextInput:
             id: workMinutes
             multiline: False
             text: "0"
             text_size: self.size
-            font_size: 30
+            font_size: 22
             font_name: 'Fonts\Roboto-Medium.ttf'
             foreground_color: C('#ffffff')
             halign: "center"
             background_normal: 'TextInputBackground\TextInputBackgroundNormal.png'
             background_active: 'TextInputBackground\TextInputBackgroundActive.png'
-            size_hint: (0.20, 0.07)
-            pos_hint: {"x": 0.28, "y": 0.72}
+            size_hint: (0.20, 0.06)
+            pos_hint: {"x": 0.28, "y": 0.76}
         
         Label:
             text: ":"
             font_name: 'Fonts\Roboto-Medium.ttf'
-            size_hint: (0.04, 0.07)
-            pos_hint: {"x": 0.48, "y": 0.72}
+            size_hint: (0.04, 0.06)
+            pos_hint: {"x": 0.48, "y": 0.76}
         
         TextInput:
             id: workSeconds
             multiline: False
             text: "0"
             text_size: self.size
-            font_size: 30
+            font_size: 22
             font_name: 'Fonts\Roboto-Medium.ttf'
             foreground_color: C('#ffffff')
             halign: "center"
             background_normal: 'TextInputBackground\TextInputBackgroundNormal.png'
             background_active: 'TextInputBackground\TextInputBackgroundActive.png'
-            size_hint: (0.20, 0.07)
-            pos_hint: {"x": 0.52, "y": 0.72}
+            size_hint: (0.20, 0.06)
+            pos_hint: {"x": 0.52, "y": 0.76}
 
         Label:
             text: "Rest"
-            font_size: 40
+            font_size: 30
             font_name: 'Fonts\Roboto-Medium.ttf'
-            size_hint: (1, 0.07)
-            pos_hint: {"x": 0, "y": 0.65}    
+            size_hint: (1, 0.06)
+            pos_hint: {"x": 0, "y": 0.70}    
             
         TextInput:
             id: restMinutes
             multiline: False
             text: "0"
             text_size: self.size
-            font_size: 30
+            font_size: 22
             font_name: 'Fonts\Roboto-Medium.ttf'
             foreground_color: C('#ffffff')
             halign: "center"
             background_normal: 'TextInputBackground\TextInputBackgroundNormal.png'
             background_active: 'TextInputBackground\TextInputBackgroundActive.png'
-            size_hint: (0.20, 0.07)
-            pos_hint: {"x": 0.28, "y": 0.58}
+            size_hint: (0.20, 0.06)
+            pos_hint: {"x": 0.28, "y": 0.64}
         
         Label:
             text: ":"
             font_name: 'Fonts\Roboto-Medium.ttf'
-            size_hint: (0.04, 0.07)
-            pos_hint: {"x": 0.48, "y": 0.58}
+            size_hint: (0.04, 0.06)
+            pos_hint: {"x": 0.48, "y": 0.64}
         
         TextInput:
             id: restSeconds
             multiline: False
             text: "0"
             text_size: self.size
-            font_size: 30
+            font_size: 22
             font_name: 'Fonts\Roboto-Medium.ttf'
             foreground_color: C('#ffffff')
             halign: "center"
             background_normal: 'TextInputBackground\TextInputBackgroundNormal.png'
             background_active: 'TextInputBackground\TextInputBackgroundActive.png'
-            size_hint: (0.20, 0.07)
-            pos_hint: {"x": 0.52, "y": 0.58}
+            size_hint: (0.20, 0.06)
+            pos_hint: {"x": 0.52, "y": 0.64}
             
         Button:
             id: AddButton
@@ -139,7 +128,7 @@ WindowManager:
             background_down: 'ButtonBackground\ButtonBackgroundDown.png'
             on_press: root.AddPressed()
             size_hint: (0.49, 0.13)
-            pos_hint: {"x": 0.505, "y": 0.425}
+            pos_hint: {"x": 0.505, "y": 0.485}
 
         Button:
             id: ResetButton
@@ -150,7 +139,7 @@ WindowManager:
             background_down: 'ButtonBackground\ButtonBackgroundDown.png'
             on_press: root.ResetPressed()
             size_hint: (0.49, 0.13)
-            pos_hint: {"x": 0.005, "y": 0.425}
+            pos_hint: {"x": 0.005, "y": 0.485}
         
         Button:
             id: StartButton
@@ -163,7 +152,42 @@ WindowManager:
                 app.root.current = "training"
                 root.manager.transition.direction = "left"
             size_hint: (0.99, 0.13)
-            pos_hint: {"x": 0.005, "y": 0.29}    
+            pos_hint: {"x": 0.005, "y": 0.35}    
+
+        ScrollView:
+            size_hint: (1, 0.24)
+            pos_hint: {"x": 0, "y": 0.1}
+            Label:
+                text: root.timesLabel
+                halign: "center"
+                font_size: 20
+                font_name: 'Fonts\Roboto-Medium.ttf'
+                text_size: (self.width, None)
+                pos_hint: {"x": 0, "y": 0}
+                size_hint_y: None
+                height: self.texture_size[1]
+        
+        Button:
+            text: "My Sets"
+            font_name: 'Fonts\Roboto-Medium.ttf'
+            font_size: 20
+            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            on_press:
+                app.root.current = "mysets"
+                root.manager.transition.direction = "right"
+            size_hint: (0.49, 0.09)
+            pos_hint: {"x": 0.005, "y": 0.005}
+
+        Button:
+            text: "Save"
+            font_name: 'Fonts\Roboto-Medium.ttf'
+            font_size: 20
+            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            on_press: root.SavePressed()
+            size_hint: (0.49, 0.09)
+            pos_hint: {"x": 0.505, "y": 0.005}
 
 <TrainingWindow>
     name: "training"
@@ -199,5 +223,102 @@ WindowManager:
                 app.root.current = "main"
                 root.manager.transition.direction = "right"
                 root.BackPressed()
+            size_hint: (0.99, 0.09)
+            pos_hint: {"x": 0.005, "y": 0.005}
+
+<MySetsWindow>
+    name: "mysets"
+
+    FloatLayout:
+        Button:
+            text: ""
+            font_name: 'Fonts\Roboto-Medium.ttf'
+            font_size: 20
+            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            size_hint: (0.99, 0.09)
+            pos_hint: {"x": 0.005, "y": 0.905}
+
+        Button:
+            text: ""
+            font_name: 'Fonts\Roboto-Medium.ttf'
+            font_size: 20
+            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            size_hint: (0.99, 0.09)
+            pos_hint: {"x": 0.005, "y": 0.805}
+
+        Button:
+            text: ""
+            font_name: 'Fonts\Roboto-Medium.ttf'
+            font_size: 20
+            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            size_hint: (0.99, 0.09)
+            pos_hint: {"x": 0.005, "y": 0.705}
+
+        Button:
+            text: ""
+            font_name: 'Fonts\Roboto-Medium.ttf'
+            font_size: 20
+            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            size_hint: (0.99, 0.09)
+            pos_hint: {"x": 0.005, "y": 0.605}
+
+        Button:
+            text: ""
+            font_name: 'Fonts\Roboto-Medium.ttf'
+            font_size: 20
+            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            size_hint: (0.99, 0.09)
+            pos_hint: {"x": 0.005, "y": 0.505}
+
+        Button:
+            text: ""
+            font_name: 'Fonts\Roboto-Medium.ttf'
+            font_size: 20
+            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            size_hint: (0.99, 0.09)
+            pos_hint: {"x": 0.005, "y": 0.405}
+
+        Button:
+            text: ""
+            font_name: 'Fonts\Roboto-Medium.ttf'
+            font_size: 20
+            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            size_hint: (0.99, 0.09)
+            pos_hint: {"x": 0.005, "y": 0.305}
+
+        Button:
+            text: ""
+            font_name: 'Fonts\Roboto-Medium.ttf'
+            font_size: 20
+            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            size_hint: (0.99, 0.09)
+            pos_hint: {"x": 0.005, "y": 0.205}
+
+        Button:
+            text: ""
+            font_name: 'Fonts\Roboto-Medium.ttf'
+            font_size: 20
+            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            size_hint: (0.99, 0.09)
+            pos_hint: {"x": 0.005, "y": 0.105}
+
+        Button:
+            text: "Back"
+            font_name: 'Fonts\Roboto-Medium.ttf'
+            font_size: 20
+            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            on_press:
+                app.root.current = "main"
+                root.manager.transition.direction = "left"
             size_hint: (0.99, 0.09)
             pos_hint: {"x": 0.005, "y": 0.005}
