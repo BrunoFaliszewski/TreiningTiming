@@ -38,21 +38,9 @@ class SavePopupWindow(Popup):
                     for i in range(len(Times)):
                         self.file.write(f'{Times[i]}\n')
 
-                with open(f'Sets\{self.popuptextinput.text}\{self.popuptextinput.text}.txt') as self.f_input:
-                    self.data = self.f_input.read().rstrip('\n')
-
-                with open(f'Sets\{self.popuptextinput.text}\{self.popuptextinput.text}.txt', 'w') as self.f_output:    
-                    self.f_output.write(self.data)
-
                 with open(f'Sets\{self.popuptextinput.text}\{self.popuptextinput.text}names.txt', 'w') as self.file:
                     for i in range(len(Names)):
                         self.file.write(f'{Names[i]}\n')
-
-                with open(f'Sets\{self.popuptextinput.text}\{self.popuptextinput.text}names.txt') as self.f_input:
-                    self.data = self.f_input.read().rstrip('\n')
-
-                with open(f'Sets\{self.popuptextinput.text}\{self.popuptextinput.text}names.txt', 'w') as self.f_output:    
-                    self.f_output.write(self.data)
 
                 with open(f'Sets\{self.popuptextinput.text}\{self.popuptextinput.text}trainingtext.txt', 'w') as self.file:
                     self.file.write(TrainingText)
@@ -90,7 +78,6 @@ class MainWindow(Screen):
                     Names.append("Rest")
             self.timesLabel += f"{self.sets.text}x Work: {self.workMinutes.text}:{self.workSeconds.text} Rest: {self.restMinutes.text}:{self.restSeconds.text}\n"
             TrainingText = self.timesLabel
-            print(TrainingText)
     
     def ResetPressed(self):
         global Times
@@ -184,8 +171,6 @@ class SetPopupWindow(Popup):
                 Names.append(self.line.strip('\n'))
                 self.line = self.file.readline()
         self.dismiss()
-        print(Times)
-        print(Names)
 
 class MySetsWindow(Screen):
     setsnames = ListProperty([])
