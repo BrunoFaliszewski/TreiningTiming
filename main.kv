@@ -5,6 +5,43 @@ WindowManager:
     TrainingWindow:
     MySetsWindow:
     
+<SavePopupWindow>
+    title: 'Enter Set Name'
+    size_hint: None, None
+    size: 300, 200
+
+    popuptextinput: popuptextinput
+
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: 33/255, 172/255, 47/255, 1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        TextInput:
+            id: popuptextinput
+            multiline: False
+            text_size: self.size
+            font_size: 22
+            font_name: 'Fonts\Roboto-Medium.ttf'
+            foreground_color: C('#ffffff')
+            halign: "center"
+            background_normal: 'TextInputBackground\TextInputBackgroundNormal.png'
+            background_active: 'TextInputBackground\TextInputBackgroundActive.png'
+            size_hint: (0.98, 0.48)
+            pos_hint: {"x": 0.01, "y": 0.51}
+
+        Button:
+            text: "Save"
+            font_name: 'Fonts\Roboto-Medium.ttf'
+            font_size: 20
+            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            on_press:
+                root.PopupSavePressed()
+            size_hint: (0.98, 0.48)
+            pos_hint: {"x": 0.01, "y": 0.01}
 
 <MainWindow>
     name: "main"
@@ -226,88 +263,156 @@ WindowManager:
             size_hint: (0.99, 0.09)
             pos_hint: {"x": 0.005, "y": 0.005}
 
+<SetPopupWindow>
+    title: root.currentset
+    size_hint: None, None
+    size: 300, 300
+
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: 33/255, 172/255, 47/255, 1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        ScrollView:
+            size_hint: (1, 0.75)
+            pos_hint: {"x": 0, "y": 0.25}
+            Label:
+                text: root.timesLabel
+                halign: "center"
+                font_size: 20
+                font_name: 'Fonts\Roboto-Medium.ttf'
+                text_size: (self.width, None)
+                pos_hint: {"x": 0, "y": 0}
+                size_hint_y: None
+                height: self.texture_size[1]
+
+        Button:
+            text: "Start"
+            font_name: 'Fonts\Roboto-Medium.ttf'
+            font_size: 20
+            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            on_press:
+                root.StartPressed()
+                app.root.current = "training"
+            size_hint: (0.48, 0.23)
+            pos_hint: {"x": 0.01, "y": 0.01}
+        
+        Button:
+            text: "Remove"
+            font_name: 'Fonts\Roboto-Medium.ttf'
+            font_size: 20
+            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            on_press: root.RemovePressed()
+            size_hint: (0.48, 0.23)
+            pos_hint: {"x": 0.51, "y": 0.01}
+
+
 <MySetsWindow>
     name: "mysets"
 
     FloatLayout:
         Button:
-            text: ""
+            id: set1
+            text: root.setsnames[0] if len(root.setsnames) >= 1 else ''
             font_name: 'Fonts\Roboto-Medium.ttf'
             font_size: 20
             background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
             background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            on_press:
+                root.SetPressed(self)
             size_hint: (0.99, 0.09)
             pos_hint: {"x": 0.005, "y": 0.905}
 
         Button:
-            text: ""
+            id: set2
+            text: root.setsnames[1] if len(root.setsnames) >= 2 else ''
             font_name: 'Fonts\Roboto-Medium.ttf'
             font_size: 20
             background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
             background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            on_press: root.SetPressed(self)
             size_hint: (0.99, 0.09)
             pos_hint: {"x": 0.005, "y": 0.805}
 
         Button:
-            text: ""
+            id: set3
+            text: root.setsnames[2] if len(root.setsnames) >= 3 else ''
             font_name: 'Fonts\Roboto-Medium.ttf'
             font_size: 20
             background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
             background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            on_press: root.SetPressed(self)
             size_hint: (0.99, 0.09)
             pos_hint: {"x": 0.005, "y": 0.705}
 
         Button:
-            text: ""
+            id: set4
+            text: root.setsnames[3] if len(root.setsnames) >= 4 else ''
             font_name: 'Fonts\Roboto-Medium.ttf'
             font_size: 20
             background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
             background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            on_press: root.SetPressed(self)
             size_hint: (0.99, 0.09)
             pos_hint: {"x": 0.005, "y": 0.605}
 
         Button:
-            text: ""
+            id: set5
+            text: root.setsnames[4] if len(root.setsnames) >= 5 else ''
             font_name: 'Fonts\Roboto-Medium.ttf'
             font_size: 20
             background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
             background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            on_press: root.SetPressed(self)
             size_hint: (0.99, 0.09)
             pos_hint: {"x": 0.005, "y": 0.505}
 
         Button:
-            text: ""
+            id: set6
+            text: root.setsnames[5] if len(root.setsnames) >= 6 else ''
             font_name: 'Fonts\Roboto-Medium.ttf'
             font_size: 20
             background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
             background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            on_press: root.SetPressed(self)
             size_hint: (0.99, 0.09)
             pos_hint: {"x": 0.005, "y": 0.405}
 
         Button:
-            text: ""
+            id: set7
+            text: root.setsnames[6] if len(root.setsnames) >= 7 else ''
             font_name: 'Fonts\Roboto-Medium.ttf'
             font_size: 20
             background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
             background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            on_press: root.SetPressed(self)
             size_hint: (0.99, 0.09)
             pos_hint: {"x": 0.005, "y": 0.305}
 
         Button:
-            text: ""
+            id: set8
+            text: root.setsnames[7] if len(root.setsnames) >= 8 else ''
             font_name: 'Fonts\Roboto-Medium.ttf'
             font_size: 20
             background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
             background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            on_press: root.SetPressed(self)
             size_hint: (0.99, 0.09)
             pos_hint: {"x": 0.005, "y": 0.205}
 
         Button:
-            text: ""
+            id: set9
+            text: root.setsnames[8] if len(root.setsnames) >= 9 else ''
             font_name: 'Fonts\Roboto-Medium.ttf'
             font_size: 20
             background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
             background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            on_press: root.SetPressed(self)
             size_hint: (0.99, 0.09)
             pos_hint: {"x": 0.005, "y": 0.105}
 
