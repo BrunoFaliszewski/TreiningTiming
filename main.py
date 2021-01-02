@@ -12,6 +12,7 @@ from os import listdir
 from os.path import isfile, join
 import os
 import shutil
+kivy.require('2.0.0')
 
 Times = [5, 4, 3, 2, 1]
 Names = ["Start"]
