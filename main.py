@@ -196,7 +196,6 @@ kv = Builder.load_file("main.kv")
 
 class TrainingTiming(App):
     def build(self):
-        self.icon = "Images\chronometer.png"
         return kv
 
 if __name__ == "__main__":
