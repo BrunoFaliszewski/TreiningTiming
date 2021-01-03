@@ -1,6 +1,7 @@
 from kivy.app import App
 from kivy.uix.popup import Popup
 from kivy.uix.floatlayout import FloatLayout
+from kivy.uix.recycleview import RecycleView
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.properties import ObjectProperty, StringProperty, ListProperty
@@ -179,22 +180,30 @@ class SetPopupWindow(Popup):
                 self.line = self.file.readline()
         self.dismiss()
 
-class MySetsWindow(Screen):
+class PreSets(RecycleView):
     setsnames = ListProperty([])
     currentset = StringProperty()
 
-    def on_pre_enter(self):
+    def __init__(self, **kwargs):
+        super(PreSets, self).__init__(**kwargs)
         Clock.schedule_interval(self.update, 1)
-    
+        self.data = [{'text': setsnames[x],'font_name': 'Fonts/Roboto-Medium.ttf','font_size': 90 , 'background_normal': 'ButtonBackground/ButtonBackgroundNormal.png', 'background_down': 'ButtonBackground/ButtonBackgroundDown.png', 'on_press': SetPressed(self)} for x in range(len(self.setsnames))]
+
     def update(self, dt):
+        print(len(self.setsnames))
         global Sets
         self.setsnames = Sets
-    
+
     def SetPressed(self, instance):
         global CurrentSet
         CurrentSet = instance.text
         self.popup = SetPopupWindow()
         self.popup.open()
+
+class MySetsWindow(Screen):
+    pass
+    
+    
 
 class WindowManager(ScreenManager):
     pass

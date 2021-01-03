@@ -311,110 +311,22 @@ WindowManager:
             size_hint: (0.48, 0.23)
             pos_hint: {"x": 0.51, "y": 0.01}
 
+<PreSets>
+    viewclass: 'Button'
+
+    RecycleGridLayout:
+        cols: 1
+        
+        size_hint_y: None
+        default_size_hint: 1, 0.1
+        height: self.minimum_height
 
 <MySetsWindow>
     name: "mysets"
 
     FloatLayout:
-        Button:
-            id: set1
-            text: root.setsnames[0] if len(root.setsnames) >= 1 else ''
-            font_name: 'Fonts/Roboto-Medium.ttf'
-            font_size: 90
-            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
-            on_press:
-                root.SetPressed(self)
-            size_hint: (0.99, 0.09)
-            pos_hint: {"x": 0.005, "y": 0.905}
-
-        Button:
-            id: set2
-            text: root.setsnames[1] if len(root.setsnames) >= 2 else ''
-            font_name: 'Fonts/Roboto-Medium.ttf'
-            font_size: 90
-            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
-            on_press: root.SetPressed(self)
-            size_hint: (0.99, 0.09)
-            pos_hint: {"x": 0.005, "y": 0.805}
-
-        Button:
-            id: set3
-            text: root.setsnames[2] if len(root.setsnames) >= 3 else ''
-            font_name: 'Fonts/Roboto-Medium.ttf'
-            font_size: 90
-            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
-            on_press: root.SetPressed(self)
-            size_hint: (0.99, 0.09)
-            pos_hint: {"x": 0.005, "y": 0.705}
-
-        Button:
-            id: set4
-            text: root.setsnames[3] if len(root.setsnames) >= 4 else ''
-            font_name: 'Fonts/Roboto-Medium.ttf'
-            font_size: 90
-            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
-            on_press: root.SetPressed(self)
-            size_hint: (0.99, 0.09)
-            pos_hint: {"x": 0.005, "y": 0.605}
-
-        Button:
-            id: set5
-            text: root.setsnames[4] if len(root.setsnames) >= 5 else ''
-            font_name: 'Fonts/Roboto-Medium.ttf'
-            font_size: 90
-            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
-            on_press: root.SetPressed(self)
-            size_hint: (0.99, 0.09)
-            pos_hint: {"x": 0.005, "y": 0.505}
-
-        Button:
-            id: set6
-            text: root.setsnames[5] if len(root.setsnames) >= 6 else ''
-            font_name: 'Fonts/Roboto-Medium.ttf'
-            font_size: 90
-            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
-            on_press: root.SetPressed(self)
-            size_hint: (0.99, 0.09)
-            pos_hint: {"x": 0.005, "y": 0.405}
-
-        Button:
-            id: set7
-            text: root.setsnames[6] if len(root.setsnames) >= 7 else ''
-            font_name: 'Fonts/Roboto-Medium.ttf'
-            font_size: 90
-            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
-            on_press: root.SetPressed(self)
-            size_hint: (0.99, 0.09)
-            pos_hint: {"x": 0.005, "y": 0.305}
-
-        Button:
-            id: set8
-            text: root.setsnames[7] if len(root.setsnames) >= 8 else ''
-            font_name: 'Fonts/Roboto-Medium.ttf'
-            font_size: 90
-            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
-            on_press: root.SetPressed(self)
-            size_hint: (0.99, 0.09)
-            pos_hint: {"x": 0.005, "y": 0.205}
-
-        Button:
-            id: set9
-            text: root.setsnames[8] if len(root.setsnames) >= 9 else ''
-            font_name: 'Fonts/Roboto-Medium.ttf'
-            font_size: 90
-            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
-            on_press: root.SetPressed(self)
-            size_hint: (0.99, 0.09)
-            pos_hint: {"x": 0.005, "y": 0.105}
+        PreSets:
+            pos_hint: {"x": 0, "y": 0.1}
 
         Button:
             text: "Back"
