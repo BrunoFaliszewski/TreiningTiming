@@ -32,17 +32,17 @@ class SavePopupWindow(Popup):
             try:
                 Sets.append(self.popuptextinput.text)
 
-                os.mkdir(f'Sets\{self.popuptextinput.text}')
+                os.mkdir(f'Sets/{self.popuptextinput.text}')
 
-                with open(f'Sets\{self.popuptextinput.text}\{self.popuptextinput.text}.txt', 'w') as self.file:
+                with open(f'Sets/{self.popuptextinput.text}/{self.popuptextinput.text}.txt', 'w') as self.file:
                     for i in range(len(Times)):
                         self.file.write(f'{Times[i]}\n')
 
-                with open(f'Sets\{self.popuptextinput.text}\{self.popuptextinput.text}names.txt', 'w') as self.file:
+                with open(f'Sets/{self.popuptextinput.text}/{self.popuptextinput.text}names.txt', 'w') as self.file:
                     for i in range(len(Names)):
                         self.file.write(f'{Names[i]}\n')
 
-                with open(f'Sets\{self.popuptextinput.text}\{self.popuptextinput.text}trainingtext.txt', 'w') as self.file:
+                with open(f'Sets/{self.popuptextinput.text}/{self.popuptextinput.text}trainingtext.txt', 'w') as self.file:
                     self.file.write(TrainingText)
 
                 self.dismiss()
@@ -92,12 +92,12 @@ class TrainingWindow(Screen):
     seconds = StringProperty()
     names = StringProperty()
     color = StringProperty()
-    oneSound = SoundLoader.load('Sounds\sone.wav')
-    twoSound = SoundLoader.load('Sounds\stwo.wav')
-    threeSound = SoundLoader.load('Sounds\sthree.wav')
-    workSound = SoundLoader.load('Sounds\swork.wav')
-    restSound = SoundLoader.load('Sounds\srest.wav')
-    endSound = SoundLoader.load('Sounds\send.wav')
+    oneSound = SoundLoader.load('Sounds/sone.wav')
+    twoSound = SoundLoader.load('Sounds/stwo.wav')
+    threeSound = SoundLoader.load('Sounds/sthree.wav')
+    workSound = SoundLoader.load('Sounds/swork.wav')
+    restSound = SoundLoader.load('Sounds/srest.wav')
+    endSound = SoundLoader.load('Sounds/send.wav')
     isFirst = False
 
     def on_pre_enter(self):
@@ -147,12 +147,12 @@ class SetPopupWindow(Popup):
     def on_open(self):
         global CurrentSet
         self.currentset = CurrentSet
-        with open(f'Sets\{CurrentSet}\{CurrentSet}trainingtext.txt', 'r') as self.file:
+        with open(f'Sets/{CurrentSet}/{CurrentSet}trainingtext.txt', 'r') as self.file:
             self.timesLabel = self.file.read()
     
     def RemovePressed(self):
         global CurrentSet, Sets
-        shutil.rmtree(f'Sets\{CurrentSet}')
+        shutil.rmtree(f'Sets/{CurrentSet}')
         Sets.remove(f'{CurrentSet}')
         self.dismiss()
     
@@ -160,12 +160,12 @@ class SetPopupWindow(Popup):
         global Times, Names
         Times = []
         Names = []
-        with open(f'Sets\{CurrentSet}\{CurrentSet}.txt', 'r') as self.file:
+        with open(f'Sets/{CurrentSet}/{CurrentSet}.txt', 'r') as self.file:
             self.line = self.file.readline()
             while self.line:
                 Times.append(int(self.line.strip('\n')))
                 self.line = self.file.readline()
-        with open(f'Sets\{CurrentSet}\{CurrentSet}names.txt', 'r') as self.file:
+        with open(f'Sets/{CurrentSet}/{CurrentSet}names.txt', 'r') as self.file:
             self.line = self.file.readline()
             while self.line:
                 Names.append(self.line.strip('\n'))

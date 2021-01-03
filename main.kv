@@ -27,8 +27,8 @@ WindowManager:
             font_name: 'Fonts/Roboto-Medium.ttf'
             foreground_color: C('#ffffff')
             halign: "center"
-            background_normal: 'TextInputBackground\TextInputBackgroundNormal.png'
-            background_active: 'TextInputBackground\TextInputBackgroundActive.png'
+            background_normal: 'TextInputBackground/TextInputBackgroundNormal.png'
+            background_active: 'TextInputBackground/TextInputBackgroundActive.png'
             size_hint: (0.98, 0.48)
             pos_hint: {"x": 0.01, "y": 0.51}
 
@@ -36,8 +36,8 @@ WindowManager:
             text: "Save"
             font_name: 'Fonts/Roboto-Medium.ttf'
             font_size: 20
-            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
             on_press:
                 root.PopupSavePressed()
             size_hint: (0.98, 0.48)
@@ -69,8 +69,8 @@ WindowManager:
             font_name: 'Fonts/Roboto-Medium.ttf'
             foreground_color: C('#ffffff')
             halign: "center"
-            background_normal: 'TextInputBackground\TextInputBackgroundNormal.png'
-            background_active: 'TextInputBackground\TextInputBackgroundActive.png'
+            background_normal: 'TextInputBackground/TextInputBackgroundNormal.png'
+            background_active: 'TextInputBackground/TextInputBackgroundActive.png'
             size_hint: (0.20, 0.06)
             pos_hint: {"x": 0.40, "y": 0.88}
 
@@ -90,8 +90,8 @@ WindowManager:
             font_name: 'Fonts/Roboto-Medium.ttf'
             foreground_color: C('#ffffff')
             halign: "center"
-            background_normal: 'TextInputBackground\TextInputBackgroundNormal.png'
-            background_active: 'TextInputBackground\TextInputBackgroundActive.png'
+            background_normal: 'TextInputBackground/TextInputBackgroundNormal.png'
+            background_active: 'TextInputBackground/TextInputBackgroundActive.png'
             size_hint: (0.20, 0.06)
             pos_hint: {"x": 0.28, "y": 0.76}
         
@@ -110,8 +110,8 @@ WindowManager:
             font_name: 'Fonts/Roboto-Medium.ttf'
             foreground_color: C('#ffffff')
             halign: "center"
-            background_normal: 'TextInputBackground\TextInputBackgroundNormal.png'
-            background_active: 'TextInputBackground\TextInputBackgroundActive.png'
+            background_normal: 'TextInputBackground/TextInputBackgroundNormal.png'
+            background_active: 'TextInputBackground/TextInputBackgroundActive.png'
             size_hint: (0.20, 0.06)
             pos_hint: {"x": 0.52, "y": 0.76}
 
@@ -131,8 +131,8 @@ WindowManager:
             font_name: 'Fonts/Roboto-Medium.ttf'
             foreground_color: C('#ffffff')
             halign: "center"
-            background_normal: 'TextInputBackground\TextInputBackgroundNormal.png'
-            background_active: 'TextInputBackground\TextInputBackgroundActive.png'
+            background_normal: 'TextInputBackground/TextInputBackgroundNormal.png'
+            background_active: 'TextInputBackground/TextInputBackgroundActive.png'
             size_hint: (0.20, 0.06)
             pos_hint: {"x": 0.28, "y": 0.64}
         
@@ -151,8 +151,8 @@ WindowManager:
             font_name: 'Fonts/Roboto-Medium.ttf'
             foreground_color: C('#ffffff')
             halign: "center"
-            background_normal: 'TextInputBackground\TextInputBackgroundNormal.png'
-            background_active: 'TextInputBackground\TextInputBackgroundActive.png'
+            background_normal: 'TextInputBackground/TextInputBackgroundNormal.png'
+            background_active: 'TextInputBackground/TextInputBackgroundActive.png'
             size_hint: (0.20, 0.06)
             pos_hint: {"x": 0.52, "y": 0.64}
             
@@ -161,8 +161,8 @@ WindowManager:
             text: "Add"
             font_name: 'Fonts/Roboto-Medium.ttf'
             font_size: 20
-            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
             on_press: root.AddPressed()
             size_hint: (0.49, 0.13)
             pos_hint: {"x": 0.505, "y": 0.485}
@@ -172,8 +172,8 @@ WindowManager:
             text: "Reset"
             font_name: 'Fonts/Roboto-Medium.ttf'
             font_size: 20
-            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
             on_press: root.ResetPressed()
             size_hint: (0.49, 0.13)
             pos_hint: {"x": 0.005, "y": 0.485}
@@ -183,8 +183,8 @@ WindowManager:
             text: "Start"
             font_name: 'Fonts/Roboto-Medium.ttf'
             font_size: 20
-            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
             on_press: 
                 app.root.current = "training"
                 root.manager.transition.direction = "left"
@@ -208,8 +208,8 @@ WindowManager:
             text: "My Sets"
             font_name: 'Fonts/Roboto-Medium.ttf'
             font_size: 20
-            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
             on_press:
                 app.root.current = "mysets"
                 root.manager.transition.direction = "right"
@@ -220,8 +220,8 @@ WindowManager:
             text: "Save"
             font_name: 'Fonts/Roboto-Medium.ttf'
             font_size: 20
-            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
             on_press: root.SavePressed()
             size_hint: (0.49, 0.09)
             pos_hint: {"x": 0.505, "y": 0.005}
@@ -254,8 +254,8 @@ WindowManager:
             text: "Back"
             font_size: 20
             font_name: 'Fonts/Roboto-Medium.ttf'
-            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
             on_press:
                 app.root.current = "main"
                 root.manager.transition.direction = "right"
@@ -293,8 +293,8 @@ WindowManager:
             text: "Start"
             font_name: 'Fonts/Roboto-Medium.ttf'
             font_size: 20
-            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
             on_press:
                 root.StartPressed()
                 app.root.current = "training"
@@ -305,8 +305,8 @@ WindowManager:
             text: "Remove"
             font_name: 'Fonts/Roboto-Medium.ttf'
             font_size: 20
-            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
             on_press: root.RemovePressed()
             size_hint: (0.48, 0.23)
             pos_hint: {"x": 0.51, "y": 0.01}
@@ -321,8 +321,8 @@ WindowManager:
             text: root.setsnames[0] if len(root.setsnames) >= 1 else ''
             font_name: 'Fonts/Roboto-Medium.ttf'
             font_size: 20
-            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
             on_press:
                 root.SetPressed(self)
             size_hint: (0.99, 0.09)
@@ -333,8 +333,8 @@ WindowManager:
             text: root.setsnames[1] if len(root.setsnames) >= 2 else ''
             font_name: 'Fonts/Roboto-Medium.ttf'
             font_size: 20
-            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
             on_press: root.SetPressed(self)
             size_hint: (0.99, 0.09)
             pos_hint: {"x": 0.005, "y": 0.805}
@@ -344,8 +344,8 @@ WindowManager:
             text: root.setsnames[2] if len(root.setsnames) >= 3 else ''
             font_name: 'Fonts/Roboto-Medium.ttf'
             font_size: 20
-            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
             on_press: root.SetPressed(self)
             size_hint: (0.99, 0.09)
             pos_hint: {"x": 0.005, "y": 0.705}
@@ -355,8 +355,8 @@ WindowManager:
             text: root.setsnames[3] if len(root.setsnames) >= 4 else ''
             font_name: 'Fonts/Roboto-Medium.ttf'
             font_size: 20
-            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
             on_press: root.SetPressed(self)
             size_hint: (0.99, 0.09)
             pos_hint: {"x": 0.005, "y": 0.605}
@@ -366,8 +366,8 @@ WindowManager:
             text: root.setsnames[4] if len(root.setsnames) >= 5 else ''
             font_name: 'Fonts/Roboto-Medium.ttf'
             font_size: 20
-            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
             on_press: root.SetPressed(self)
             size_hint: (0.99, 0.09)
             pos_hint: {"x": 0.005, "y": 0.505}
@@ -377,8 +377,8 @@ WindowManager:
             text: root.setsnames[5] if len(root.setsnames) >= 6 else ''
             font_name: 'Fonts/Roboto-Medium.ttf'
             font_size: 20
-            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
             on_press: root.SetPressed(self)
             size_hint: (0.99, 0.09)
             pos_hint: {"x": 0.005, "y": 0.405}
@@ -388,8 +388,8 @@ WindowManager:
             text: root.setsnames[6] if len(root.setsnames) >= 7 else ''
             font_name: 'Fonts/Roboto-Medium.ttf'
             font_size: 20
-            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
             on_press: root.SetPressed(self)
             size_hint: (0.99, 0.09)
             pos_hint: {"x": 0.005, "y": 0.305}
@@ -399,8 +399,8 @@ WindowManager:
             text: root.setsnames[7] if len(root.setsnames) >= 8 else ''
             font_name: 'Fonts/Roboto-Medium.ttf'
             font_size: 20
-            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
             on_press: root.SetPressed(self)
             size_hint: (0.99, 0.09)
             pos_hint: {"x": 0.005, "y": 0.205}
@@ -410,8 +410,8 @@ WindowManager:
             text: root.setsnames[8] if len(root.setsnames) >= 9 else ''
             font_name: 'Fonts/Roboto-Medium.ttf'
             font_size: 20
-            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
             on_press: root.SetPressed(self)
             size_hint: (0.99, 0.09)
             pos_hint: {"x": 0.005, "y": 0.105}
@@ -420,8 +420,8 @@ WindowManager:
             text: "Back"
             font_name: 'Fonts/Roboto-Medium.ttf'
             font_size: 20
-            background_normal: 'ButtonBackground\ButtonBackgroundNormal.png'
-            background_down: 'ButtonBackground\ButtonBackgroundDown.png'
+            background_normal: 'ButtonBackground/ButtonBackgroundNormal.png'
+            background_down: 'ButtonBackground/ButtonBackgroundDown.png'
             on_press:
                 app.root.current = "main"
                 root.manager.transition.direction = "left"
