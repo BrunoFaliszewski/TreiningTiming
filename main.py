@@ -149,10 +149,13 @@ class SetPopupWindow(Popup):
     timesLabel = StringProperty()
 
     def on_open(self):
-        global CurrentSet
-        self.currentset = CurrentSet
-        with open(f'Sets/{CurrentSet}/{CurrentSet}trainingtext.txt', 'r') as self.file:
-            self.timesLabel = self.file.read()
+        try:
+            global CurrentSet
+            self.currentset = CurrentSet
+            with open(f'Sets/{CurrentSet}/{CurrentSet}trainingtext.txt', 'r') as self.file:
+                self.timesLabel = self.file.read()
+        except FileNotFoundError:
+            self.dismiss()
     
     def RemovePressed(self):
         global CurrentSet, Sets
