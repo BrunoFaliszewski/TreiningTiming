@@ -15,7 +15,10 @@ import shutil
 
 Times = [5, 4, 3, 2, 1]
 Names = ["Start"]
-os.mkdir('Sets')
+try:
+    os.mkdir('Sets')
+except FileExistsError:
+    pass
 Sets = glob(os.path.join('Sets', "*", ""))
 for i in range(len(Sets)):
     Sets[i] = Sets[i].replace('Sets', '')
