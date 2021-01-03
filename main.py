@@ -1,7 +1,6 @@
 from kivy.app import App
 from kivy.uix.popup import Popup
 from kivy.uix.floatlayout import FloatLayout
-from kivy.uix.recycleview import RecycleView
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.properties import ObjectProperty, StringProperty, ListProperty
@@ -13,7 +12,6 @@ from os import listdir
 from os.path import isfile, join
 import os
 import shutil
-
 Times = [5, 4, 3, 2, 1]
 Names = ["Start"]
 try:
@@ -27,35 +25,27 @@ for i in range(len(Sets)):
 CurrentSet = ''
 TrainingText = ''
 print(Sets)
-
 class SavePopupWindow(Popup):
     popuptextinput = ObjectProperty(None)
-
     def PopupSavePressed(self):
         global Sets, Times, Names, TrainingText
         if len(Sets) < 9:
             try:
                 Sets.append(self.popuptextinput.text)
-
                 os.mkdir(f'Sets/{self.popuptextinput.text}')
-
                 with open(f'Sets/{self.popuptextinput.text}/{self.popuptextinput.text}.txt', 'w') as self.file:
                     for i in range(len(Times)):
                         self.file.write(f'{Times[i]}\n')
-
                 with open(f'Sets/{self.popuptextinput.text}/{self.popuptextinput.text}names.txt', 'w') as self.file:
                     for i in range(len(Names)):
                         self.file.write(f'{Names[i]}\n')
-
                 with open(f'Sets/{self.popuptextinput.text}/{self.popuptextinput.text}trainingtext.txt', 'w') as self.file:
                     self.file.write(TrainingText)
-
                 self.dismiss()
             except FileExistsError:
                 self.popuptextinput.text = "There already is that set"
         else:
             self.popuptextinput.text = "You already have 9 Sets"
-
 class MainWindow(Screen):
     sets = ObjectProperty(None)
     workMinutes = ObjectProperty(None)
@@ -63,10 +53,8 @@ class MainWindow(Screen):
     restMinutes = ObjectProperty(None)
     restSeconds = ObjectProperty(None)
     timesLabel = StringProperty()
-
     def on_pre_enter(self):
         Window.clearcolor = (33/255, 172/255, 47/255, 1)
-
     def AddPressed(self):
         global Times, Names, Colors, TrainingText
         if int(self.sets.text) > 0 and (int(self.workMinutes.text) * 60 + int(self.workSeconds.text) > 0 or int(self.restMinutes.text) * 60 + int(self.restSeconds.text) > 0):
@@ -88,11 +76,9 @@ class MainWindow(Screen):
         global Times
         Times = [5, 4, 3, 2, 1]
         self.timesLabel = ""
-
     def SavePressed(self):
         self.popup = SavePopupWindow()
         self.popup.open()
-
 class TrainingWindow(Screen):
     seconds = StringProperty()
     names = StringProperty()
@@ -104,13 +90,11 @@ class TrainingWindow(Screen):
     restSound = SoundLoader.load('Sounds/srest.wav')
     endSound = SoundLoader.load('Sounds/send.wav')
     isFirst = False
-
     def on_pre_enter(self):
         Window.clearcolor = (223/255, 227/255, 9/255, 1)
         self.secondsnum = 0
         self.namesnum = 0
         self.schedule = Clock.schedule_interval(self.updatelabel, 1)
-
     def updatelabel(self, dt):
         global Times, Names
         if self.secondsnum < len(Times):
@@ -144,11 +128,9 @@ class TrainingWindow(Screen):
     
     def BackPressed(self):
         Clock.unschedule(self.schedule)
-
 class SetPopupWindow(Popup):
     currentset = StringProperty()
     timesLabel = StringProperty()
-
     def on_open(self):
         try:
             global CurrentSet
@@ -179,40 +161,26 @@ class SetPopupWindow(Popup):
                 Names.append(self.line.strip('\n'))
                 self.line = self.file.readline()
         self.dismiss()
-
-class PreSets(RecycleView):
+class MySetsWindow(Screen):
     setsnames = ListProperty([])
     currentset = StringProperty()
-
-    def __init__(self, **kwargs):
-        super(PreSets, self).__init__(**kwargs)
+    def on_pre_enter(self):
         Clock.schedule_interval(self.update, 1)
-        self.data = [{'text': setsnames[x],'font_name': 'Fonts/Roboto-Medium.ttf','font_size': 90 , 'background_normal': 'ButtonBackground/ButtonBackgroundNormal.png', 'background_down': 'ButtonBackground/ButtonBackgroundDown.png', 'on_press': SetPressed(self)} for x in range(len(self.setsnames))]
-
+    
     def update(self, dt):
-        print(len(self.setsnames))
         global Sets
         self.setsnames = Sets
-
+    
     def SetPressed(self, instance):
         global CurrentSet
         CurrentSet = instance.text
         self.popup = SetPopupWindow()
         self.popup.open()
-
-class MySetsWindow(Screen):
-    pass
-    
-    
-
 class WindowManager(ScreenManager):
     pass
-
 kv = Builder.load_file("main.kv")
-
 class TrainingTiming(App):
     def build(self):
         return kv
-
 if __name__ == "__main__":
     TrainingTiming().run()
