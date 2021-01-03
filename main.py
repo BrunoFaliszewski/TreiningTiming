@@ -22,7 +22,7 @@ except FileExistsError:
 Sets = glob(os.path.join('Sets', "*", ""))
 for i in range(len(Sets)):
     Sets[i] = Sets[i].replace('Sets', '')
-    Sets[i] = Sets[i].replace('\\', '')
+    Sets[i] = Sets[i].replace('/', '')
 CurrentSet = ''
 TrainingText = ''
 print(Sets)
